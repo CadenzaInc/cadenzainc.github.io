@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ernesto Alcívar López — Compositor · Guitarrista · Pedagogo · Director y Productor Musical</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: #090909;
+      color: #e4e4e7;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: #16a34a; color: #090909; }
+    a { color: #16a34a; text-decoration: none; transition: color .2s; }
+    a:hover { color: #22c55e; }
+    img { max-width: 100%; display: block; }
+
+    .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      padding: 16px 24px;
+      background: rgba(9,9,9,.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #27272a;
+      display: flex; justify-content: center; gap: 32px;
+      z-index: 100;
+    }
+    nav a {
+      font-size: .875rem; font-weight: 500; color: #a1a1aa;
+      letter-spacing: .02em;
+    }
+    nav a:hover { color: #e4e4e7; }
+
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 120px 24px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 50%, rgba(22,163,74,.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-foto {
+      width: 147px; height: 147px; border-radius: 50%; object-fit: cover;
+      border: 3px solid #16a34a; margin: 0 auto 24px;
+      box-shadow: 0 0 40px rgba(22,163,74,.2);
+      display: block;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700;
+      letter-spacing: -.03em;
+      margin-bottom: 16px;
+    }
+    .hero .accent { color: #16a34a; }
+    .hero .sub {
+      font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 300;
+      color: #a1a1aa; margin-bottom: 8px;
+    }
+    .hero .tagline {
+      font-size: .95rem; color: #71717a; max-width: 520px; margin: 16px auto 0;
+    }
+    .hero .scroll {
+      margin-top: 48px; font-size: .8rem; color: #52525b;
+      animation: float 2s ease-in-out infinite;
+    }
+    .hero-socials {
+      display: flex; justify-content: center; gap: 20px; margin-top: 24px;
+    }
+    .hero-socials a {
+      display: flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px; border-radius: 50%;
+      border: 1px solid #27272a; background: #1a1a1a;
+      transition: all .2s;
+    }
+    .hero-socials a:hover {
+      border-color: #16a34a; background: rgba(22,163,74,.1);
+      transform: translateY(-2px);
+    }
+    .hero-socials svg { fill: #a1a1aa; }
+    .hero-socials a:hover svg { fill: #16a34a; }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
+
+    section { padding: 96px 0; }
+    .section-title {
+      font-size: 1.75rem; font-weight: 600; letter-spacing: -.02em;
+      margin-bottom: 48px;
+    }
+    .section-title span { color: #16a34a; }
+
+    .bio-text {
+      max-width: 720px; font-size: 1rem; color: #a1a1aa;
+      line-height: 1.8; text-align: justify;
+    }
+    .bio-text strong { color: #e4e4e7; font-weight: 500; }
+
+    .timeline { position: relative; padding-left: 32px; }
+    .timeline::before {
+      content: ''; position: absolute; left: 7px; top: 0; bottom: 0;
+      width: 1px; background: #27272a;
+    }
+    .timeline-item {
+      position: relative; margin-bottom: 36px;
+    }
+    .timeline-item::before {
+      content: ''; position: absolute; left: -26px; top: 8px;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: #16a34a; border: 2px solid #090909;
+    }
+    .timeline-year {
+      font-size: .8rem; font-weight: 600; color: #16a34a;
+      letter-spacing: .04em; text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    .timeline-title {
+      font-size: 1.05rem; font-weight: 500; color: #e4e4e7;
+    }
+    .timeline-desc {
+      font-size: .9rem; color: #71717a; margin-top: 2px;
+    }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr; gap: 24px; }
+
+    .card {
+      background: #1a1a1a; border: 1px solid #27272a;
+      border-radius: 12px; padding: 32px;
+      transition: border-color .2s, transform .2s;
+    }
+    .card:hover { border-color: #16a34a; transform: translateY(-2px); }
+    .card h3 {
+      font-size: 1.1rem; font-weight: 600; margin-bottom: 8px;
+      color: #e4e4e7;
+    }
+    .card .meta { font-size: .85rem; color: #16a34a; margin-bottom: 8px; }
+    .card p { font-size: .9rem; color: #a1a1aa; line-height: 1.7; }
+    .card ul { list-style: none; margin-top: 8px; }
+    .card ul li {
+      font-size: .9rem; color: #a1a1aa; padding: 4px 0;
+      padding-left: 16px; position: relative;
+    }
+    .card ul li::before {
+      content: '→'; position: absolute; left: 0; color: #16a34a;
+    }
+    .obra-card { display: flex; gap: 16px; align-items: center; padding: 16px; }
+    .obra-card img {
+      width: 72px; height: 72px; border-radius: 8px; object-fit: cover; flex-shrink: 0;
+    }
+    .obra-card h3 { margin-bottom: 0; font-size: 1rem; }
+    .obra-card .meta { margin-bottom: 2px; }
+
+    .services-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+
+    .contact-links {
+      display: flex; flex-wrap: wrap; gap: 16px;
+      justify-content: center; margin-top: 32px;
+    }
+    .contact-links a {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 24px; border: 1px solid #27272a; border-radius: 8px;
+      font-size: .9rem; font-weight: 500; color: #e4e4e7;
+      transition: all .2s;
+    }
+    .contact-links a:hover {
+      border-color: #16a34a; background: rgba(22,163,74,.08);
+    }
+
+    footer {
+      padding: 48px 24px; text-align: center;
+      border-top: 1px solid #27272a;
+      font-size: .85rem; color: #52525b;
+    }
+
+    @media (min-width: 640px) {
+      .grid-2 { grid-template-columns: 1fr 1fr; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      nav { gap: 12px; flex-wrap: wrap; justify-content: center; padding: 12px 16px; }
+      nav a { font-size: .75rem; }
+      section { padding: 64px 0; }
+    }
+
+    .skills-tags {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;
+    }
+    .skills-tags span {
+      padding: 4px 14px; border-radius: 999px;
+      background: rgba(22,163,74,.1); border: 1px solid rgba(22,163,74,.2);
+      font-size: .8rem; color: #22c55e;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 14px 32px; border-radius: 8px;
+      background: #16a34a; color: #090909; font-weight: 600;
+      font-size: .95rem; border: none; cursor: pointer;
+      transition: background .2s;
+    }
+    .cta-btn:hover { background: #22c55e; color: #090909; }
+
+    .credenciales-grid {
+      display: grid; grid-template-columns: 1fr; gap: 16px;
+    }
+    .credencial-card {
+      display: flex; gap: 16px; align-items: center;
+      background: #1a1a1a; border: 1px solid #27272a;
+      border-radius: 10px; padding: 12px;
+      transition: border-color .2s, transform .2s;
+      text-decoration: none; color: inherit;
+    }
+    .credencial-card:hover {
+      border-color: #16a34a; transform: translateX(4px);
+    }
+    .credencial-card img {
+      width: 64px; height: 64px; border-radius: 6px;
+      object-fit: cover; flex-shrink: 0;
+    }
+    .credencial-info {
+      display: flex; flex-direction: column; gap: 2px; min-width: 0;
+    }
+    .credencial-info strong {
+      font-size: .9rem; font-weight: 500; color: #e4e4e7;
+    }
+    .credencial-info span {
+      font-size: .8rem; color: #71717a;
+    }
+    details summary { list-style: none; cursor: pointer; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary:hover { color: #22c55e; }
+    details[open] summary { margin-bottom: 8px; }
+    @media (min-width: 640px) {
+      .credenciales-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#inicio">Inicio</a>
+  <a href="#sobre-mi">Sobre mí</a>
+  <a href="#trayectoria">Trayectoria</a>
+  <a href="#obras">Obras</a>
+  <a href="#credenciales">Credenciales</a>
+  <a href="#data-analytics">Data</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#youtube">YouTube</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+
+<section class="hero" id="inicio">
+  <div>
+    <img src="foto.jpg" alt="Ernesto Alcívar López" class="hero-foto" loading="lazy">
+    <h1>Ernesto <span class="accent">Alcívar</span> López</h1>
+    <p class="sub">Compositor · Guitarrista · Pedagogo · Director y Productor Musical</p>
+    <p class="sub" style="font-size:.95rem;color:#71717a;">Tecnólogo en Innovación Educativa · Maestrante en Data Analysis e IA</p>
+    <p class="tagline">Música, educación y creación desde Ecuador para el mundo.</p>
+    <div style="margin-top:32px">
+      <a href="#contacto" class="cta-btn">Trabajemos juntos</a>
+    </div>
+    <div class="hero-socials">
+      <a href="https://bsky.app/profile/ernestoalcivar.bsky.social" target="_blank" aria-label="Bluesky">
+        <svg width="20" height="20" viewBox="0 0 16 17" fill="#a1a1aa"><path d="M7.75 7.735c-.693-1.348-2.58-3.86-4.334-5.097-1.68-1.187-2.32-.981-2.74-.79C.188 2.065.1 2.812.1 3.251s.241 3.602.398 4.13c.52 1.744 2.367 2.333 4.07 2.145-2.495.37-4.71 1.278-1.805 4.512 3.196 3.309 4.38-.71 4.987-2.746.608 2.036 1.307 5.91 4.93 2.746 2.72-2.746.747-4.143-1.747-4.512 1.702.189 3.55-.4 4.07-2.145.156-.528.397-3.691.397-4.13s-.088-1.186-.575-1.406c-.42-.19-1.06-.395-2.741.79-1.755 1.24-3.64 3.752-4.334 5.099"/></svg>
+      </a>
+      <a href="https://github.com/ealcivar" target="_blank" aria-label="GitHub">
+        <svg width="20" height="20" viewBox="0 0 19 19" fill="#a1a1aa"><path fill-rule="evenodd" d="M9.356 1.85C5.05 1.85 1.57 5.356 1.57 9.694a7.84 7.84 0 0 0 5.324 7.44c.387.079.528-.168.528-.376 0-.182-.013-.805-.013-1.454-2.165.467-2.616-.935-2.616-.935-.349-.91-.864-1.143-.864-1.143-.71-.48.051-.48.051-.48.787.051 1.2.805 1.2.805.695 1.194 1.817.857 2.268.649.064-.507.27-.857.49-1.052-1.728-.182-3.545-.857-3.545-3.87 0-.857.31-1.558.8-2.104-.078-.195-.349-1 .077-2.078 0 0 .657-.208 2.14.805a7.5 7.5 0 0 1 1.946-.26c.657 0 1.328.092 1.946.26 1.483-1.013 2.14-.805 2.14-.805.426 1.078.155 1.883.078 2.078.502.546.799 1.247.799 2.104 0 3.013-1.818 3.675-3.558 3.87.284.247.528.714.528 1.454 0 1.052-.012 1.896-.012 2.156 0 .208.142.455.528.377a7.84 7.84 0 0 0 5.324-7.441c.013-4.338-3.48-7.844-7.773-7.844"/></svg>
+      </a>
+      <a href="https://x.com/ealcivar" target="_blank" aria-label="X">
+        <svg width="20" height="20" viewBox="0 0 19 19" fill="#a1a1aa"><path fill-rule="evenodd" d="M1.893 1.98c.052.072 1.245 1.769 2.653 3.77l2.892 4.114c.183.261.333.48.333.486s-.068.089-.152.183l-.522.593-.765.867-3.597 4.087c-.375.426-.734.834-.798.905a1 1 0 0 0-.118.148c0 .01.236.017.664.017h.663l.729-.83c.4-.457.796-.906.879-.999a692 692 0 0 0 1.794-2.038c.034-.037.301-.34.594-.675l.551-.624.345-.392a7 7 0 0 1 .34-.374c.006 0 .93 1.306 2.052 2.903l2.084 2.965.045.063h2.275c1.87 0 2.273-.003 2.266-.021-.008-.02-1.098-1.572-3.894-5.547-2.013-2.862-2.28-3.246-2.273-3.266.008-.019.282-.332 2.085-2.38l2-2.274 1.567-1.782c.022-.028-.016-.03-.65-.03h-.674l-.3.342a871 871 0 0 1-1.782 2.025c-.067.075-.405.458-.75.852a100 100 0 0 1-.803.91c-.148.172-.299.344-.99 1.127-.304.343-.32.358-.345.327-.015-.019-.904-1.282-1.976-2.808L6.365 1.85H1.8zm1.782.91 8.078 11.294c.772 1.08 1.413 1.973 1.425 1.984.016.017.241.02 1.05.017l1.03-.004-2.694-3.766L7.796 5.75 5.722 2.852l-1.039-.004-1.039-.004z"/></svg>
+      </a>
+      <a href="mailto:alcivarlopezernesto@gmail.com" aria-label="Email">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a1a1aa" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </a>
+    </div>
+    <p class="scroll">desliza</p>
+  </div>
+</section>
+
+<section id="sobre-mi">
+  <div class="container">
+    <h2 class="section-title"><span>●</span> Sobre mí</h2>
+    <div class="bio-text">
+      <p style="margin-bottom:16px;">
+        Soy <strong>compositor, guitarrista, pedagogo, director y productor musical</strong> ecuatoriano. Desde 2014 soy docente
+        de Guitarra y Materias Teóricas en el <strong>Conservatorio Nacional de Música</strong> de Quito.
+        Poseo un título en <strong>Composición</strong> (Conservatorio Superior Nacional de Música, 2018)
+        y una <strong>Tecnología Superior Universitaria en Docencia e Innovación Educativa</strong>
+        (ISTER Rumiñahui, 2025).
+      </p>
+      <p style="margin-bottom:16px;">
+        He sido miembro de la <strong>Orquesta de Guitarras del Ecuador</strong> y del ensamble
+        <strong>Cordalia</strong>. He participado en festivales internacionales de guitarra,
+        masterclasses con el maestro italiano <strong>Alberto Mesirca</strong>, y mi trabajo
+        como compositor incluye himnos oficiales para gobiernos locales y obras originales
+        como la <strong>"Suite Costera"</strong>.
+      </p>
+      <p>
+        En 2025 fui reconocido por la <strong>Asamblea Nacional del Ecuador</strong> y el
+        <strong>Ministerio de Cultura y Patrimonio</strong> por mi contribución a la educación
+        musical y la difusión del patrimonio sonoro del país. También me certifiqué en
+        <strong>IA para el entorno laboral</strong> con Google Gemini en Campus Madrid.
+      </p>
+      <p>
+        Actualmente curso una <strong>Maestría en Herramientas para el Análisis de Datos e IA</strong>
+        en el Instituto Tecnológico Universitario Rumiñahui (ISTER), integrando mi formación
+        musical con las tecnologías del dato y la inteligencia artificial.
+      </p>
+      <p style="margin-top:16px;color:#71717a;font-style:italic;border-left:2px solid #27272a;padding-left:16px;">
+        "Un ecosistema digital que fusiona la creación artística, la formación musical tecnológica
+        y la precisión del análisis de datos — un proyecto de vida en evolución."
+      </p>
+    </div>
+    <div class="skills-tags">
+      <span>Composición</span>
+      <span>Guitarra clásica</span>
+      <span>Pedagogía musical</span>
+      <span>Arreglos</span>
+      <span>Transcripción</span>
+      <span>IA & Música</span>
+      <span>Innovación educativa</span>
+      <span>Dirección musical</span>
+      <span>Producción musical</span>
+      <span>Data Analysis</span>
+      <span>Maestría IA</span>
+    </div>
+  </div>
+</section>
+
+<section id="trayectoria" style="background:#0d0d0d;">
+  <div class="container">
+    <h2 class="section-title"><span>●</span> Trayectoria</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-year">1999</div>
+        <div class="timeline-title">Bachiller en Ciencias</div>
+        <div class="timeline-desc">Colegio Experimental Juan Montalvo — Especialización Químico Biológicas</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2002</div>
+        <div class="timeline-title">Diploma — Las Computadoras y su empleo en la Música</div>
+        <div class="timeline-desc">Academia Integral de Bellas Artes / Washington D.C.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2003</div>
+        <div class="timeline-title">VI Encuentro Nacional "La Guitarra desde Los Andes"</div>
+        <div class="timeline-desc">CCE Benjamín Carrión, Núcleo de Chimborazo — Reconocido como "Connotado Maestro de la Guitarra"</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2006</div>
+        <div class="timeline-title">I Festival Internacional de Guitarras "Ciudad de Quito"</div>
+        <div class="timeline-desc">Fundación Filarmónica Casa de la Música</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2006</div>
+        <div class="timeline-title">Cordalia — Ensamble de guitarras</div>
+        <div class="timeline-desc">Debut con el ensamble juvenil de guitarras</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2009</div>
+        <div class="timeline-title">Bachiller Técnico Musical — Guitarra</div>
+        <div class="timeline-desc">Conservatorio Nacional de Música</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2010</div>
+        <div class="timeline-title">Miembro — CCE Benjamín Carrión, Núcleo Sucumbíos</div>
+        <div class="timeline-desc">Composición del himno de la Parroquia El Reventador</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2014</div>
+        <div class="timeline-title">Docente de Guitarra y Materias Teóricas</div>
+        <div class="timeline-desc">Conservatorio Nacional de Música — Inicio de trayectoria docente</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2014</div>
+        <div class="timeline-title">Masterclass con Alberto Mesirca</div>
+        <div class="timeline-desc">Clases maestras de interpretación de la guitarra con el concertista italiano</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2015</div>
+        <div class="timeline-title">Himno del Cantón Gonzalo Pizarro</div>
+        <div class="timeline-desc">Composición del himno oficial</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2016</div>
+        <div class="timeline-title">Reconocimiento — Ministerio de Cultura y Patrimonio</div>
+        <div class="timeline-desc">Por contribución al fortalecimiento de grupos sinfónico-corales y de tradición ancestral</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2017</div>
+        <div class="timeline-title">Proyecto de partituras digitales</div>
+        <div class="timeline-desc">10 piezas para ensamble de guitarras (60 min) + "Suite Costera" (8 min)</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2018</div>
+        <div class="timeline-title">Título de Compositor</div>
+        <div class="timeline-desc">Conservatorio Superior Nacional de Música — Nivel equivalente a Tecnología Superior</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2024</div>
+        <div class="timeline-title">Conductor Profesional Tipo E</div>
+        <div class="timeline-desc">Sindicato de Choferes Profesionales de Pichincha — 9 meses de formación</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2024</div>
+        <div class="timeline-title">10 años en el Conservatorio Nacional de Música</div>
+        <div class="timeline-desc">Reconocimiento por una década de servicio docente</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2025</div>
+        <div class="timeline-title">Reconocimiento — Asamblea Nacional del Ecuador</div>
+        <div class="timeline-desc">Por labor pedagógica y calidad académica en la difusión del patrimonio musical</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2025</div>
+        <div class="timeline-title">Google Gemini — Certificación en IA</div>
+        <div class="timeline-desc">JA Leaders / Google Campus Madrid — Torre Picasso</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2025</div>
+        <div class="timeline-title">Tecnólogo en Docencia e Innovación Educativa</div>
+        <div class="timeline-desc">Instituto Tecnológico Universitario Rumiñahui (ISTER)</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2026</div>
+        <div class="timeline-title">Maestría en Herramientas para Análisis de Datos e IA</div>
+        <div class="timeline-desc">Instituto Tecnológico Universitario Rumiñahui (ISTER) — Cursando</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2026</div>
+        <div class="timeline-title">15 Años de Servicio Docente — CNM</div>
+        <div class="timeline-desc">Reconocimiento por 15 años de labor en el Conservatorio Nacional de Música</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2026</div>
+        <div class="timeline-title">Docente — Conservatorio Nacional de Música</div>
+        <div class="timeline-desc">Contrato vigente — Docente de Música</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="obras">
+  <div class="container">
+    <h2 class="section-title"><span>●</span> Obras</h2>
+    <div class="grid-2">
+      <div class="card">
+        <div class="meta">Composición original</div>
+        <h3>Suite Costera</h3>
+        <p>Obra orquestal de 8 minutos resultado de la investigación, transcripción y arreglo de dos piezas tradicionales esmeraldeñas y una manabita. Incluye partitura general y partes individuales.</p>
+      </div>
+      <div class="card">
+        <div class="meta">Himno oficial</div>
+        <h3>Himno del Cantón Gonzalo Pizarro</h3>
+        <p>Composición del himno oficial del cantón. (2015)</p>
+      </div>
+      <div class="card">
+        <div class="meta">Himno oficial</div>
+        <h3>Himno de la Parroquia El Reventador</h3>
+        <p>Música del himno oficial de la parroquia. (2010)</p>
+      </div>
+      <div class="card">
+        <div class="meta">Arreglo</div>
+        <h3>Transcripción de "Nocturnal"</h3>
+        <p>Transcripción digital del pasillo ecuatoriano de Homero Iturralde, a partir del arreglo orquestal de Carlos Bonilla Chávez. Partitura general y partes. 4 min.</p>
+      </div>
+      <div class="card">
+        <div class="meta">Colección didáctica</div>
+        <h3>10 Piezas para Ensamble de Guitarras</h3>
+        <p>Obras de dificultad progresiva (nivel básico-medio) con repertorio universal, tradicional, latinoamericano y ecuatoriano. 60 min de duración total.</p>
+      </div>
+      <div class="card">
+        <div class="meta">Reconocimiento</div>
+        <h3>Compositor y Arreglista</h3>
+        <p>Reconocido por el Ministerio de Cultura y Patrimonio por la contribución desinteresada al fortalecimiento de grupos musicales infantiles y juveniles del Ecuador. (2016)</p>
+      </div>
+    </div>
+    <h3 style="font-size:1.3rem;font-weight:600;margin:48px 0 24px;color:#e4e4e7;">
+      <span style="color:#16a34a;">●</span> Catálogo de composiciones originales
+    </h3>
+    <div class="grid-2">
+      <div class="card obra-card">
+        <img src="thumbnails/musica_original/aparecida.jpg" alt="" loading="lazy">
+        <div>
+          <div class="meta">Original · <a href="pdf/musica_original/aparecida.pdf" target="_blank" style="font-weight:500;">PDF</a> · <a href="https://www.youtube.com/watch?v=VlDCX4r1BSM" target="_blank" style="font-weight:500;">Video</a></div>
+          <h3>Aparecida</h3>
+        </div>
+      </div>
+      <div class="card obra-card">
+        <img src="thumbnails/musica_original/artificial.jpg" alt="" loading="lazy">
+        <div>
+          <div class="meta">Original · <a href="pdf/musica_original/artificial.pdf" target="_blank" style="font-weight:500;">PDF</a> · <a href="https://www.youtube.com/watch?v=Q2uUNMSSzNA" target="_blank" style="font-weight:500;">Video</a></div>
+          <h3>Artificial</h3>
+        </div>
+      </div>
+      <div class="card obra-card">
+        <img src="thumbnails/musica_original/bagatelle.jpg" alt="" loading="lazy">
+        <div>
+          <div class="meta">Original · <a href="pdf/musica_original/bagatelle.pdf" target="_blank" style="font-weight:500;">PDF</a> · <a href="https://www.youtube.com/watch?v=f9_QTcxZwGA" target="_blank" style="font-weight:500;">Video</a></div>
+          <h3>Bagatelle</h3>
+        </div>
+      </div>
+      <div class="card obra-card">
+        <img src="thumbnails/musica_original/cardumen.jpg" alt="" loading="lazy">
+        <div>
+          <div class="meta">Original · <a href="pdf/musica_original/cardumen.pdf" target="_blank" style="font-weight:500;">PDF</a> · <a href="https://www.youtube.com/watch?v=-vVXblTlvTg" target="_blank" style="font-weight:500;">Video</a></div>
+          <h3>Cardumen</h3>
+        </div>
+      </div>
+      <div class="card obra-card">
+        <img src="thumbnails/musica_original/danza.jpg" alt="" loading="lazy">
+        <div>
+          <div class="meta">Original · <a href="pdf/musica_original/danza.pdf" target="_blank" style="font-weight:500;">PDF</a> · <a href="https://www.youtube.com/watch?v=i_eIpx98GUs" target="_blank" style="font-weight:500;">Video</a></div>
+          <h3>Danza</h3>
+        </div>
+      </div>
+      <div class="card obra-card">
+        <img src="thumbnails/musica_original/escuadrones.jpg" alt="" loading="lazy">
+        <div>
+          <div class="meta">Original · <a href="pdf/musica_original/escuadrones.pdf" target="_blank" style="font-weight:500;">PDF</a> · <a href="https://www.youtube.com/watch?v=Ev2o6ztgd2c" target="_blank" style="font-weight:500;">Video</a></div>
+          <h3>Escuadrones</h3>
+        </div>
+      </div>
+      <div class="card obra-card">
+        <img src="thumbnails/musica_original/impromtu.jpg" alt="" loading="lazy">
+        <div>
+          <div class="meta">Original · <a href="pdf/musica_original/impromtu.pdf" target="_blank" style="font-weight:500;">PDF</a> · <a href="https://www.youtube.com/watch?v=7KcOHVh74q4" target="_blank" style="font-weight:500;">Video</a></div>
+          <h3>Impromtu</h3>
+        </div>
+      </div>
+      <div class="card obra-card">
+        <img src="thumbnails/musica_original/incomoda.jpg" alt="" loading="lazy">
+        <div>
+          <div class="meta">Original · <a href="pdf/musica_original/incomoda.pdf" target="_blank" style="font-weight:500;">PDF</a> · <a href="https://www.youtube.com/watch?v=-h95AYhO5qk" target="_blank" style="font-weight:500;">Video</a></div>
+          <h3>Incómoda</h3>
+        </div>
+      </div>
+      <div class="card obra-card">
+        <img src="thumbnails/musica_original/letargo.jpg" alt="" loading="lazy">
+        <div>
+          <div class="meta">Original · <a href="pdf/musica_original/letargo.pdf" target="_blank" style="font-weight:500;">PDF</a> · <a href="https://www.youtube.com/watch?v=r44k_tMJFWY" target="_blank" style="font-weight:500;">Video</a></div>
+          <h3>Letargo</h3>
+        </div>
+      </div>
+      <div class="card obra-card">
+        <img src="thumbnails/musica_original/lobos_marinos.jpg" alt="" loading="lazy">
+        <div>
+          <div class="meta">Original · <a href="pdf/musica_original/lobos_marinos.pdf" target="_blank" style="font-weight:500;">PDF</a> · <a href="https://www.youtube.com/watch?v=P2uYHRpX4AM" target="_blank" style="font-weight:500;">Video</a></div>
+          <h3>Lobos Marinos</h3>
+        </div>
+      </div>
+      <div class="card obra-card">
+        <img src="thumbnails/musica_original/lunatica.jpg" alt="" loading="lazy">
+        <div>
+          <div class="meta">Original · <a href="pdf/musica_original/lunatica.pdf" target="_blank" style="font-weight:500;">PDF</a> · <a href="https://www.youtube.com/watch?v=4Ds8YrRmaww&t=654s" target="_blank" style="font-weight:500;">Video</a></div>
+          <h3>Viaje a la Luna</h3>
+        </div>
+      </div>
+      <div class="card obra-card">
+        <img src="thumbnails/musica_original/obrero.jpg" alt="" loading="lazy">
+        <div>
+          <div class="meta">Original · <a href="pdf/musica_original/obrero.pdf" target="_blank" style="font-weight:500;">PDF</a> · <a href="https://www.youtube.com/watch?v=K0cHfkdspXE" target="_blank" style="font-weight:500;">Video</a></div>
+          <h3>Obrero</h3>
+        </div>
+      </div>
+      <div class="card obra-card">
+        <img src="thumbnails/musica_original/paramada_del_litoral.jpg" alt="" loading="lazy">
+        <div>
+          <div class="meta">Original · <a href="pdf/musica_original/paramada_del_litoral.pdf" target="_blank" style="font-weight:500;">PDF</a> · <a href="https://www.youtube.com/watch?v=8wuf2kdYges" target="_blank" style="font-weight:500;">Video</a></div>
+          <h3>Paramada del Litoral</h3>
+        </div>
+      </div>
+      <div class="card obra-card">
+        <img src="thumbnails/musica_original/partida.jpg" alt="" loading="lazy">
+        <div>
+          <div class="meta">Original · <a href="pdf/musica_original/partida.pdf" target="_blank" style="font-weight:500;">PDF</a> · <a href="https://www.youtube.com/watch?v=WnyxA8ZORHs" target="_blank" style="font-weight:500;">Video</a></div>
+          <h3>Partida</h3>
+        </div>
+      </div>
+      <div class="card obra-card">
+        <img src="thumbnails/musica_original/ronda.jpg" alt="" loading="lazy">
+        <div>
+          <div class="meta">Original · <a href="pdf/musica_original/ronda.pdf" target="_blank" style="font-weight:500;">PDF</a> · <a href="https://www.youtube.com/watch?v=mUfrObip8yg" target="_blank" style="font-weight:500;">Video</a></div>
+          <h3>Ronda</h3>
+        </div>
+      </div>
+      <div class="card obra-card">
+        <img src="thumbnails/musica_original/temporal.jpg" alt="" loading="lazy">
+        <div>
+          <div class="meta">Original · <a href="pdf/musica_original/temporal.pdf" target="_blank" style="font-weight:500;">PDF</a> · <a href="https://www.youtube.com/watch?v=go6vgqf-c_E" target="_blank" style="font-weight:500;">Video</a></div>
+          <h3>Temporal</h3>
+        </div>
+      </div>
+      <div class="card obra-card">
+        <img src="thumbnails/musica_original/tulipe.jpg" alt="" loading="lazy">
+        <div>
+          <div class="meta">Original · <a href="pdf/musica_original/tulipe.pdf" target="_blank" style="font-weight:500;">PDF</a> · <a href="https://www.youtube.com/watch?v=yl2OpNpYQpk" target="_blank" style="font-weight:500;">Video</a></div>
+          <h3>Tulipe</h3>
+        </div>
+      </div>
+    </div>
+    <h3 style="font-size:1.3rem;font-weight:600;margin:48px 0 24px;color:#e4e4e7;">
+      <span style="color:#16a34a;">●</span> Arreglos musicales
+    </h3>
+    <div class="grid-2">
+      <div class="card obra-card">
+        <img src="thumbnails/musica_arreglos/blanca_navidad.jpg" alt="" loading="lazy">
+        <div>
+          <div class="meta">Arreglo · <a href="pdf/musica_arreglos/blanca_navidad.pdf" target="_blank" style="font-weight:500;">PDF</a> · <a href="https://www.youtube.com/watch?v=JkK9kMWVN_A&list=PLddMCTJ8-Zygm1nLJl4Dg8GhC93okQomK&index=4" target="_blank" style="font-weight:500;">Video</a></div>
+          <h3>Blanca Navidad</h3>
+        </div>
+      </div>
+      <div class="card obra-card">
+        <img src="thumbnails/musica_arreglos/desde_el_alto_cielo.jpg" alt="" loading="lazy">
+        <div>
+          <div class="meta">Arreglo · <a href="pdf/musica_arreglos/desde_el_alto_cielo.pdf" target="_blank" style="font-weight:500;">PDF</a> · <a href="https://www.youtube.com/watch?v=ZETAzfjI7zc&list=PLddMCTJ8-Zygm1nLJl4Dg8GhC93okQomK&index=3" target="_blank" style="font-weight:500;">Video</a></div>
+          <h3>Desde el Alto Cielo</h3>
+        </div>
+      </div>
+      <div class="card obra-card">
+        <img src="thumbnails/musica_arreglos/nino_si_el_amor.jpg" alt="" loading="lazy">
+        <div>
+          <div class="meta">Arreglo · <a href="pdf/musica_arreglos/nino_si_el_amor.pdf" target="_blank" style="font-weight:500;">PDF</a> · <a href="https://www.youtube.com/watch?v=zSCL-BezdXk&list=PLddMCTJ8-Zygm1nLJl4Dg8GhC93okQomK&index=2" target="_blank" style="font-weight:500;">Video</a></div>
+          <h3>Niño si el Amor</h3>
+        </div>
+      </div>
+      <div class="card obra-card">
+        <img src="thumbnails/musica_arreglos/ya_viene_el_ninito.jpg" alt="" loading="lazy">
+        <div>
+          <div class="meta">Arreglo · <a href="pdf/musica_arreglos/ya_viene_el_ninito.pdf" target="_blank" style="font-weight:500;">PDF</a> · <a href="https://www.youtube.com/watch?v=UMUN1GWx-ZE&list=PLddMCTJ8-Zygm1nLJl4Dg8GhC93okQomK&index=1" target="_blank" style="font-weight:500;">Video</a></div>
+          <h3>Ya viene el niñito</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="youtube" style="background:#0d0d0d;">
+  <div class="container">
+    <h2 class="section-title"><span>●</span> YouTube</h2>
+    <p style="color:#a1a1aa;max-width:600px;margin:0 auto 32px;text-align:center;">40 videos. Composición musical, interpretaciones, podcast de tecnología y cursos de historia del arte.</p>
+    <div class="grid-2">
+      <div class="card">
+        <h3>🎵 Composiciones</h3>
+        <ul>
+          <li><a href="https://www.youtube.com/watch?v=VlDCX4r1BSM" target="_blank">Aparecida</a> · <a href="https://www.youtube.com/watch?v=yl2OpNpYQpk" target="_blank">Tulipe</a> · <a href="https://www.youtube.com/watch?v=r44k_tMJFWY" target="_blank">Letargo</a></li>
+          <li><a href="https://www.youtube.com/watch?v=K0cHfkdspXE" target="_blank">Obrero</a> · <a href="https://www.youtube.com/watch?v=-vVXblTlvTg" target="_blank">Cardúmen</a> · <a href="https://www.youtube.com/watch?v=Q2uUNMSSzNA" target="_blank">Artificial</a></li>
+          <li><a href="https://www.youtube.com/watch?v=7KcOHVh74q4" target="_blank">Impromtu</a> · <a href="https://www.youtube.com/watch?v=f9_QTcxZwGA" target="_blank">Bagatelle</a> · <a href="https://www.youtube.com/watch?v=i_eIpx98GUs" target="_blank">Danza</a></li>
+          <li><a href="https://www.youtube.com/watch?v=Ev2o6ztgd2c" target="_blank">Escuadrones</a> · <a href="https://www.youtube.com/watch?v=-h95AYhO5qk" target="_blank">Incómoda</a> · <a href="https://www.youtube.com/watch?v=WnyxA8ZORHs" target="_blank">Partida</a></li>
+          <li><a href="https://www.youtube.com/watch?v=P2uYHRpX4AM" target="_blank">Lobos marinos</a> · <a href="https://www.youtube.com/watch?v=mUfrObip8yg" target="_blank">Ronda</a> · <a href="https://www.youtube.com/watch?v=go6vgqf-c_E" target="_blank">Temporal</a></li>
+          <li><a href="https://www.youtube.com/watch?v=8wuf2kdYges" target="_blank">Paramada del litoral</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🎸 Interpretaciones</h3>
+        <ul>
+          <li><a href="https://www.youtube.com/watch?v=P283SiwQGu8" target="_blank">Colores</a> — Jorge Oviedo Jaramillo</li>
+          <li><a href="https://www.youtube.com/watch?v=rJNIC_LnA_U" target="_blank">Coral BWV 140</a> — J.S. Bach</li>
+          <li><a href="https://www.youtube.com/watch?v=SPB5R00iXn0" target="_blank">Ombra mai fu</a> — G.F. Händel</li>
+          <li><a href="https://www.youtube.com/watch?v=Ig_8r1tEO3I" target="_blank">Ponchito al hombro</a> — C. Bonilla</li>
+          <li><a href="https://www.youtube.com/watch?v=5-jJV0BSGJA" target="_blank">Quiteñitas</a> — C. Bonilla Chávez</li>
+          <li><a href="https://www.youtube.com/watch?v=OS02UoPUzdE" target="_blank">Burrito Sabanero</a> · <a href="https://www.youtube.com/watch?v=JkK9kMWVN_A" target="_blank">Blanca Navidad</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>📊 Tecnología & Datos</h3>
+        <ul>
+          <li><a href="https://www.youtube.com/watch?v=W4zJRQ-3y-I" target="_blank">Podcast - Python</a> (24 min)</li>
+          <li><a href="https://www.youtube.com/watch?v=EDNbjWoLERg" target="_blank">Podcast - SQL</a> (24 min)</li>
+          <li><a href="https://www.youtube.com/watch?v=nuh56h-7F0U" target="_blank">Podcast - R</a> (18 min)</li>
+          <li><a href="https://www.youtube.com/watch?v=BBjhYWskILI" target="_blank">Podcast - Análisis de Datos</a> (26 min)</li>
+          <li><a href="https://www.youtube.com/watch?v=IdzdT-kKFo8" target="_blank">Python — Análisis de Datos</a></li>
+          <li><a href="https://www.youtube.com/watch?v=ULjqP_Iwzs8" target="_blank">SQL — El Lenguaje de los Datos</a></li>
+          <li style="color:#16a34a;font-weight:500;margin-top:8px;">← Alineado con mi Maestría en Data Analysis e IA</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🎨 Historia del Arte</h3>
+        <ul>
+          <li>Curso completo (40 horas)</li>
+          <li><a href="https://www.youtube.com/watch?v=qa5dlNNCQJc" target="_blank">Podcast - Historia del Arte</a> (24 min)</li>
+          <li>Diseñado para compositores</li>
+          <li>Desde la Prehistoria hasta hoy</li>
+          <li>Conexiones artes visuales-música</li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:32px;">
+      <a href="https://www.youtube.com/@ernestoalcivarlopez2227" target="_blank" class="cta-btn" style="display:inline-flex;align-items:center;gap:8px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        Ver canal completo (40 videos)
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="credenciales">
+  <div class="container">
+    <h2 class="section-title"><span>●</span> Credenciales</h2>
+    <p style="color:#a1a1aa;max-width:600px;margin:0 auto 48px;text-align:center;">43 títulos, certificaciones y reconocimientos (1999–2026). Haz clic en cada uno para ver el documento.</p>
+    <div class="credenciales-grid">
+      <a href="pdf/credenciales/reconocimiento_coro_femenino_2026_04_24.pdf" target="_blank" class="credencial-card">
+        <img src="thumbnails/credenciales/reconocimiento_coro_femenino_2026_04_24.jpg" alt="" loading="lazy">
+        <div class="credencial-info">
+          <strong>Reconocimiento — Arreglos Coro Femenino CNM</strong>
+          <span>2026 · Primer Lugar Festival de Villancicos</span>
+        </div>
+      </a>
+      <a href="pdf/credenciales/reconocimiento_15_anios_2026_04_24.pdf" target="_blank" class="credencial-card">
+        <img src="thumbnails/credenciales/reconocimiento_15_anios_2026_04_24.jpg" alt="" loading="lazy">
+        <div class="credencial-info">
+          <strong>Reconocimiento 15 Años de Servicio Docente</strong>
+          <span>2026 · Conservatorio Nacional de Música</span>
+        </div>
+      </a>
+      <a href="pdf/credenciales/titulo_ister_2025_10_20_00.pdf" target="_blank" class="credencial-card">
+        <img src="thumbnails/credenciales/titulo_ister_2025_10_20_00.jpg" alt="" loading="lazy">
+        <div class="credencial-info">
+          <strong>Tecnólogo Superior en Docencia e Innovación Educativa</strong>
+          <span>2025 · Título Académico</span>
+        </div>
+      </a>
+      <a href="pdf/credenciales/certificado_ia_2025_09_23.pdf" target="_blank" class="credencial-card">
+        <img src="thumbnails/credenciales/certificado_ia_2025_09_23.jpg" alt="" loading="lazy">
+        <div class="credencial-info">
+          <strong>IA en práctica para el entorno de trabajo</strong>
+          <span>2025 · Google Gemini</span>
+        </div>
+      </a>
+      <a href="pdf/credenciales/reconocimiento_2025_01_27_00.pdf" target="_blank" class="credencial-card">
+        <img src="thumbnails/credenciales/reconocimiento_2025_01_27_00.jpg" alt="" loading="lazy">
+        <div class="credencial-info">
+          <strong>Reconocimiento Asamblea Nacional del Ecuador</strong>
+          <span>2025 · Reconocimiento</span>
+        </div>
+      </a>
+      <a href="pdf/credenciales/titulo_csnm_2018_05_28_00.pdf" target="_blank" class="credencial-card">
+        <img src="thumbnails/credenciales/titulo_csnm_2018_05_28_00.jpg" alt="" loading="lazy">
+        <div class="credencial-info">
+          <strong>Tecnólogo Superior en Composición Acústica</strong>
+          <span>2018 · Título Académico</span>
+        </div>
+      </a>
+      <a href="pdf/credenciales/reconocimiento_2016_05_05_00.pdf" target="_blank" class="credencial-card">
+        <img src="thumbnails/credenciales/reconocimiento_2016_05_05_00.jpg" alt="" loading="lazy">
+        <div class="credencial-info">
+          <strong>Reconocimiento Ministerio de Cultura y Patrimonio</strong>
+          <span>2016 · Reconocimiento</span>
+        </div>
+      </a>
+      <a href="pdf/credenciales/titulo_cnm_2009_07_28_00.pdf" target="_blank" class="credencial-card">
+        <img src="thumbnails/credenciales/titulo_cnm_2009_07_28_00.jpg" alt="" loading="lazy">
+        <div class="credencial-info">
+          <strong>Bachiller Técnico Musical — Guitarra</strong>
+          <span>2009 · Título Académico</span>
+        </div>
+      </a>
+    </div>
+    <details style="margin-top:32px;text-align:center;">
+      <summary style="cursor:pointer;color:#16a34a;font-weight:500;font-size:.95rem;">
+        Ver las 43 credenciales completas
+      </summary>
+      <div class="credenciales-grid" style="margin-top:24px;">
+        <a href="pdf/credenciales/reconocimiento_coro_femenino_2026_04_24.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/reconocimiento_coro_femenino_2026_04_24.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Reconocimiento — Arreglos Coro Femenino CNM</strong><span>2026</span></div>
+        </a>
+        <a href="pdf/credenciales/reconocimiento_15_anios_2026_04_24.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/reconocimiento_15_anios_2026_04_24.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Reconocimiento 15 Años de Servicio Docente</strong><span>2026</span></div>
+        </a>
+        <a href="pdf/credenciales/certificado_2025_04_04_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/certificado_2025_04_04_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Certificado de participación CNM</strong><span>2025</span></div>
+        </a>
+        <a href="pdf/credenciales/capacitacion_2025_03_28_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/capacitacion_2025_03_28_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Taller de Guitarra UCE</strong><span>2025</span></div>
+        </a>
+        <a href="pdf/credenciales/capacitacion_2024_12_08_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/capacitacion_2024_12_08_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Capacitación en Administración de Empresas</strong><span>2024</span></div>
+        </a>
+        <a href="pdf/credenciales/capacitacion_2024_12_07_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/capacitacion_2024_12_07_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Capacitación en Análisis y Gestión de Riesgos Ambientales</strong><span>2024</span></div>
+        </a>
+        <a href="pdf/credenciales/capacitacion_2024_11_24_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/capacitacion_2024_11_24_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Capacitación en Introducción al Marketing</strong><span>2024</span></div>
+        </a>
+        <a href="pdf/credenciales/certificado_2024_11_15_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/certificado_2024_11_15_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Certificado de Trabajo CNM</strong><span>2024</span></div>
+        </a>
+        <a href="pdf/credenciales/capacitacion_2024_10_28_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/capacitacion_2024_10_28_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Capacitación en Arte Contemporáneo</strong><span>2024</span></div>
+        </a>
+        <a href="pdf/credenciales/capacitacion_2024_10_08_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/capacitacion_2024_10_08_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Capacitación en Prospectiva y Gestión Estratégica</strong><span>2024</span></div>
+        </a>
+        <a href="pdf/credenciales/capacitacion_2024_09_18_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/capacitacion_2024_09_18_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Taller de Guitarra Clásica UDLA</strong><span>2024</span></div>
+        </a>
+        <a href="pdf/credenciales/reconocimiento_2024_06_07_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/reconocimiento_2024_06_07_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Reconocimiento 10 Años de Servicio Docente CNM</strong><span>2024</span></div>
+        </a>
+        <a href="pdf/credenciales/capacitacion_2023_11_23_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/capacitacion_2023_11_23_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Capacitación en Inglés A1</strong><span>2023</span></div>
+        </a>
+        <a href="pdf/credenciales/capacitacion_2023_11_23_02.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/capacitacion_2023_11_23_02.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Capacitación Iniciación a la Música</strong><span>2023</span></div>
+        </a>
+        <a href="pdf/credenciales/capacitacion_2023_11_21_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/capacitacion_2023_11_21_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Capacitación Didáctica, Cómo Enseñar</strong><span>2023</span></div>
+        </a>
+        <a href="pdf/credenciales/capacitacion_2023_11_21_02.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/capacitacion_2023_11_21_02.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Capacitación en Pedagogía</strong><span>2023</span></div>
+        </a>
+        <a href="pdf/credenciales/certificado_2022_06_00_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/certificado_2022_06_00_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Certificado Institución Segura</strong><span>2022</span></div>
+        </a>
+        <a href="pdf/credenciales/certificado_2018_05_20_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/certificado_2018_05_20_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Certificado Prácticas Pre Profesionales</strong><span>2018</span></div>
+        </a>
+        <a href="pdf/credenciales/certificado_2017_04_19_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/certificado_2017_04_19_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Certificado Encuentro de Guitarra</strong><span>2017</span></div>
+        </a>
+        <a href="pdf/credenciales/certificacion_2017_04_07_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/certificacion_2017_04_07_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Certificado CNM Digitalización de Partituras</strong><span>2017</span></div>
+        </a>
+        <a href="pdf/credenciales/reconocimiento_2015_07_04_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/reconocimiento_2015_07_04_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Reconocimiento GAD Municipal</strong><span>2015</span></div>
+        </a>
+        <a href="pdf/credenciales/certificado_2014_11_28_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/certificado_2014_11_28_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Certificado Clase Magistral CNM</strong><span>2014</span></div>
+        </a>
+        <a href="pdf/credenciales/certificado_2014_10_01_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/certificado_2014_10_01_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Certificado Cultura Viva DMQ</strong><span>2014</span></div>
+        </a>
+        <a href="pdf/credenciales/certificacion_2014_08_08_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/certificacion_2014_08_08_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Certificado GAD Municipal</strong><span>2014</span></div>
+        </a>
+        <a href="pdf/credenciales/certificacion_2014_07_29_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/certificacion_2014_07_29_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Certificado GAD Parroquial</strong><span>2014</span></div>
+        </a>
+        <a href="pdf/credenciales/certificacion_2013_07_02_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/certificacion_2013_07_02_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Certificado OSNE Ecuador</strong><span>2013</span></div>
+        </a>
+        <a href="pdf/credenciales/membresia_cce_ns_2010_05_22_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/membresia_cce_ns_2010_05_22_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Membresía CCE Núcleo Sucumbíos</strong><span>2010</span></div>
+        </a>
+        <a href="pdf/credenciales/certificado_2010_10_05_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/certificado_2010_10_05_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Certificado Casa de la Música</strong><span>2010</span></div>
+        </a>
+        <a href="pdf/credenciales/certificado_2010_05_03_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/certificado_2010_05_03_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Certificado Encuentro Arte y Cultura</strong><span>2010</span></div>
+        </a>
+        <a href="pdf/credenciales/invitacion_2010_02_13_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/invitacion_2010_02_13_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Concierto CCE Núcleo Sucumbíos</strong><span>2010</span></div>
+        </a>
+        <a href="pdf/credenciales/diploma_2009_08_00_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/diploma_2009_08_00_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Diploma DMQ</strong><span>2009</span></div>
+        </a>
+        <a href="pdf/credenciales/certificado_2007_10_19_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/certificado_2007_10_19_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Certificado Casa de la Música</strong><span>2007</span></div>
+        </a>
+        <a href="pdf/credenciales/reportaje_2006_12_00_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/reportaje_2006_12_00_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Reportaje Ensamble Cordalia</strong><span>2006</span></div>
+        </a>
+        <a href="pdf/credenciales/diploma_2005_04_13_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/diploma_2005_04_13_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Diploma Encuentro Arte y Cultura</strong><span>2005</span></div>
+        </a>
+        <a href="pdf/credenciales/reconocimiento_2003_02_21_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/reconocimiento_2003_02_21_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Reconocimiento CCE Núcleo del Chimborazo</strong><span>2003</span></div>
+        </a>
+        <a href="pdf/credenciales/diploma_2002_07_26_00.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/diploma_2002_07_26_00.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Diploma Academia Integral de Bellas Artes</strong><span>2002</span></div>
+        </a>
+        <a href="pdf/credenciales/titulo_1999_98_06_cjm.pdf" target="_blank" class="credencial-card">
+          <img src="thumbnails/credenciales/titulo_1999_98_06_cjm.jpg" alt="" loading="lazy">
+          <div class="credencial-info"><strong>Bachiller en Ciencias</strong><span>1999</span></div>
+        </a>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section id="data-analytics" style="background:#0d0d0d;">
+  <div class="container">
+    <h2 class="section-title"><span>●</span> Data Analytics</h2>
+    <p style="color:#a1a1aa;max-width:600px;margin:0 auto 48px;text-align:center;">
+      Recursos educativos de análisis de datos. Cada tema incluye documento principal y presentación, con video asociado en YouTube.
+    </p>
+    <div class="grid-2">
+      <div class="card">
+        <div class="meta">Introducción · <a href="pdf/analisis_de_datos/01_analisis_de_datos_intro.pdf" target="_blank" style="font-weight:500;">PDF</a> · <a href="pdf/analisis_de_datos/01_analisis_de_datos_intro_press.pdf" target="_blank" style="font-weight:500;">Presentación</a> · <a href="https://www.youtube.com/watch?v=BBjhYWskILI" target="_blank" style="font-weight:500;">Video</a></div>
+        <h3>Introducción al Análisis de Datos</h3>
+        <p>Fundamentos del análisis de datos: conceptos clave, metodologías y aplicaciones prácticas.</p>
+      </div>
+      <div class="card">
+        <div class="meta">SQL · <a href="pdf/analisis_de_datos/02_analisis_de_datos_sql.pdf" target="_blank" style="font-weight:500;">PDF</a> · <a href="pdf/analisis_de_datos/02_analisis_de_datos_sql_press.pdf" target="_blank" style="font-weight:500;">Presentación</a> · <a href="https://www.youtube.com/watch?v=EDNbjWoLERg" target="_blank" style="font-weight:500;">Video</a></div>
+        <h3>Análisis de Datos con SQL</h3>
+        <p>Consultas, filtros, agregaciones y manipulación de bases de datos relacionales con SQL.</p>
+      </div>
+      <div class="card">
+        <div class="meta">Python · <a href="pdf/analisis_de_datos/03_analisis_de_datos_python.pdf" target="_blank" style="font-weight:500;">PDF</a> · <a href="pdf/analisis_de_datos/03_analisis_de_datos_python_press.pdf" target="_blank" style="font-weight:500;">Presentación</a> · <a href="https://www.youtube.com/watch?v=W4zJRQ-3y-I" target="_blank" style="font-weight:500;">Video</a></div>
+        <h3>Análisis de Datos con Python</h3>
+        <p>Pandas, NumPy, visualización y análisis exploratorio con el ecosistema Python.</p>
+      </div>
+      <div class="card">
+        <div class="meta">R · <a href="pdf/analisis_de_datos/04_analisis_de_datos_r.pdf" target="_blank" style="font-weight:500;">PDF</a> · <a href="pdf/analisis_de_datos/04_analisis_de_datos_r_press.pdf" target="_blank" style="font-weight:500;">Presentación</a> · <a href="https://www.youtube.com/watch?v=nuh56h-7F0U" target="_blank" style="font-weight:500;">Video</a></div>
+        <h3>Análisis de Datos con R</h3>
+        <p>Estadística, visualización y manipulación de datos con el lenguaje R.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="servicios" style="background:#0d0d0d;">
+  <div class="container">
+    <h2 class="section-title"><span>●</span> Servicios</h2>
+    <div class="services-grid">
+      <div class="card">
+        <h3>Clases de Guitarra</h3>
+        <p>Presenciales u online. Todos los niveles. Repertorio clásico, latinoamericano y ecuatoriano. Técnica, lectura, armonía aplicada.</p>
+      </div>
+      <div class="card">
+        <h3>Teoría Musical</h3>
+        <p>Lenguaje musical, armonía, análisis, preparación para exámenes de ingreso a conservatorios. Clases individuales o grupales.</p>
+      </div>
+      <div class="card">
+        <h3>Composición Acústica y Electroacústica</h3>
+        <p>Obras originales para guitarra, ensamble, orquesta y formatos electroacústicos. Composición acústica tradicional y exploración sonora con herramientas digitales.</p>
+      </div>
+      <div class="card">
+        <h3>Arreglos y Transcripciones</h3>
+        <p>Arreglos para ensamble de guitarras, orquesta, grupos de cámara. Transcripción digital de partituras. Edición profesional con software de notación.</p>
+      </div>
+      <div class="card">
+        <h3>📊 Introducción al Análisis de Datos</h3>
+        <p>Como maestrante en Data Analysis e IA, ofrezco tutorías básicas en Python, SQL, R y fundamentos de análisis de datos para principiantes. Ideal para músicos e interesados en tecnología.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="container" style="text-align:center;">
+    <h2 class="section-title"><span>●</span> Contacto</h2>
+    <p style="color:#a1a1aa; max-width:480px; margin: 0 auto 16px;">
+      Estoy disponible para clases, composiciones por encargo, arreglos musicales
+      y colaboraciones. No dudes en escribirme.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:alcivarlopezernesto@gmail.com">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        alcivarlopezernesto@gmail.com
+      </a>
+      <a href="https://wa.me/593960541969" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+        +593 96 054 1969
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Ernesto Alcívar López · Quito, Ecuador</p>
+  <p style="margin-top:4px;font-size:.8rem;">Compositor · Guitarrista · Pedagogo · Director y Productor Musical</p>
+</footer>
+
+</body>
+</html>
