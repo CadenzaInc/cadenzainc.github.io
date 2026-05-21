@@ -40,42 +40,11 @@
     }
     nav a:hover { color: #e4e4e7; }
 
-    .hero {
-      min-height: 100vh;
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 120px 24px 80px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 50% 50%, rgba(22,163,74,.06) 0%, transparent 70%);
-      pointer-events: none;
-    }
     .hero-foto {
       width: 147px; height: 147px; border-radius: 50%; object-fit: cover;
       border: 3px solid #16a34a; margin: 0 auto 24px;
       box-shadow: 0 0 40px rgba(22,163,74,.2);
       display: block;
-    }
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700;
-      letter-spacing: -.03em;
-      margin-bottom: 16px;
-    }
-    .hero .accent { color: #16a34a; }
-    .hero .sub {
-      font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 300;
-      color: #a1a1aa; margin-bottom: 8px;
-    }
-    .hero .tagline {
-      font-size: .95rem; color: #71717a; max-width: 520px; margin: 16px auto 0;
-    }
-    .hero .scroll {
-      margin-top: 48px; font-size: .8rem; color: #52525b;
-      animation: float 2s ease-in-out infinite;
     }
     .hero-socials {
       display: flex; justify-content: center; gap: 20px; margin-top: 24px;
@@ -92,14 +61,6 @@
     }
     .hero-socials svg { fill: #a1a1aa; }
     .hero-socials a:hover svg { fill: #16a34a; }
-    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
-
-    section { padding: 96px 0; }
-    .section-title {
-      font-size: 1.75rem; font-weight: 600; letter-spacing: -.02em;
-      margin-bottom: 48px;
-    }
-    .section-title span { color: #16a34a; }
 
     .bio-text {
       max-width: 720px; font-size: 1rem; color: #a1a1aa;
@@ -190,7 +151,6 @@
     @media (max-width: 480px) {
       nav { gap: 12px; flex-wrap: wrap; justify-content: center; padding: 12px 16px; }
       nav a { font-size: .75rem; }
-      section { padding: 64px 0; }
     }
 
     .skills-tags {
@@ -237,10 +197,28 @@
     .credencial-info span {
       font-size: .8rem; color: #71717a;
     }
-    details summary { list-style: none; cursor: pointer; }
-    details summary::-webkit-details-marker { display: none; }
-    details summary:hover { color: #22c55e; }
-    details[open] summary { margin-bottom: 8px; }
+    details.section summary {
+      list-style: none; cursor: pointer; user-select: none;
+      display: flex; align-items: center; justify-content: center; gap: 12px;
+      padding: 24px; font-size: 1.1rem; font-weight: 600;
+      letter-spacing: -.02em; color: #e4e4e7; background: #090909;
+      transition: color .2s, background .2s;
+    }
+    details.section summary::-webkit-details-marker { display: none; }
+    details.section summary:hover { color: #22c55e; background: #0d0d0d; }
+    details.section summary::after {
+      content: '+'; font-size: 1.2rem; font-weight: 300;
+      color: #16a34a; transition: transform .3s;
+    }
+    details.section[open] summary::after {
+      content: '−'; transform: rotate(180deg);
+    }
+    details.section[open] { padding-bottom: 48px; }
+    details.section .section-title {
+      font-size: 1.75rem; font-weight: 600; letter-spacing: -.02em;
+      margin-bottom: 48px;
+    }
+    details.section .section-title span { color: #16a34a; }
     @media (min-width: 640px) {
       .credenciales-grid { grid-template-columns: 1fr 1fr; }
     }
@@ -260,15 +238,15 @@
   <a href="#contacto">Contacto</a>
 </nav>
 
-<section class="hero" id="inicio">
-  <div>
+<div id="inicio">
+  <div class="container" style="text-align:center;padding-top:96px;padding-bottom:48px;">
     <img src="foto.jpg" alt="Ernesto Alcívar López" class="hero-foto" loading="lazy">
-    <h1>Ernesto <span class="accent">Alcívar</span> López</h1>
-    <p class="sub">Compositor · Guitarrista · Pedagogo · Director y Productor Musical</p>
-    <p class="sub" style="font-size:.95rem;color:#71717a;">Tecnólogo en Innovación Educativa · Maestrante en Data Analysis e IA</p>
-    <p class="tagline">Música, educación y creación desde Ecuador para el mundo.</p>
+    <h1 style="font-size:clamp(2rem,5vw,3.5rem);font-weight:700;letter-spacing:-.03em;margin-bottom:16px;">Ernesto <span style="color:#16a34a;">Alcívar</span> López</h1>
+    <p style="font-size:clamp(1rem,2vw,1.25rem);font-weight:300;color:#a1a1aa;margin-bottom:8px;">Compositor · Guitarrista · Pedagogo · Director y Productor Musical</p>
+    <p style="font-size:.95rem;color:#71717a;">Tecnólogo en Innovación Educativa · Maestrante en Data Analysis e IA</p>
+    <p style="font-size:.95rem;color:#71717a;max-width:520px;margin:16px auto 0;">Música, educación y creación desde Ecuador para el mundo.</p>
     <div style="margin-top:32px">
-      <a href="#contacto" class="cta-btn">Trabajemos juntos</a>
+      <a href="#contacto" class="cta-btn" onclick="event.preventDefault();document.getElementById('contacto').open=true;document.getElementById('contacto').scrollIntoView({behavior:'smooth'});">Trabajemos juntos</a>
     </div>
     <div class="hero-socials">
       <a href="https://bsky.app/profile/ernestoalcivar.bsky.social" target="_blank" aria-label="Bluesky">
@@ -284,13 +262,12 @@
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a1a1aa" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       </a>
     </div>
-    <p class="scroll">desliza</p>
   </div>
-</section>
+</div>
 
-<section id="sobre-mi">
-  <div class="container">
-    <h2 class="section-title"><span>●</span> Sobre mí</h2>
+<details class="section" id="sobre-mi">
+  <summary>Sobre mí</summary>
+  <div class="container" style="padding-top:48px;">
     <div class="bio-text">
       <p style="margin-bottom:16px;">
         Soy <strong>compositor, guitarrista, pedagogo, director y productor musical</strong> ecuatoriano. Desde 2014 soy docente
@@ -336,11 +313,11 @@
       <span>Maestría IA</span>
     </div>
   </div>
-</section>
+</details>
 
-<section id="trayectoria" style="background:#0d0d0d;">
-  <div class="container">
-    <h2 class="section-title"><span>●</span> Trayectoria</h2>
+<details class="section" id="trayectoria">
+  <summary style="background:#0d0d0d;">Trayectoria</summary>
+  <div class="container" style="padding-top:48px;">
     <div class="timeline">
       <div class="timeline-item">
         <div class="timeline-year">1999</div>
@@ -449,11 +426,11 @@
       </div>
     </div>
   </div>
-</section>
+</details>
 
-<section id="obras">
-  <div class="container">
-    <h2 class="section-title"><span>●</span> Obras</h2>
+<details class="section" id="obras">
+  <summary>Obras</summary>
+  <div class="container" style="padding-top:48px;">
     <div class="grid-2">
       <div class="card">
         <div class="meta">Composición original</div>
@@ -644,11 +621,11 @@
       </div>
     </div>
   </div>
-</section>
+</details>
 
-<section id="youtube" style="background:#0d0d0d;">
-  <div class="container">
-    <h2 class="section-title"><span>●</span> YouTube</h2>
+<details class="section" id="youtube">
+  <summary>YouTube</summary>
+  <div class="container" style="padding-top:48px;">
     <p style="color:#a1a1aa;max-width:600px;margin:0 auto 32px;text-align:center;">40 videos. Composición musical, interpretaciones, podcast de tecnología y cursos de historia del arte.</p>
     <div class="grid-2">
       <div class="card">
@@ -703,11 +680,11 @@
       </a>
     </div>
   </div>
-</section>
+</details>
 
-<section id="credenciales">
-  <div class="container">
-    <h2 class="section-title"><span>●</span> Credenciales</h2>
+<details class="section" id="credenciales">
+  <summary>Credenciales</summary>
+  <div class="container" style="padding-top:48px;">
     <p style="color:#a1a1aa;max-width:600px;margin:0 auto 48px;text-align:center;">43 títulos, certificaciones y reconocimientos (1999–2026). Haz clic en cada uno para ver el documento.</p>
     <div class="credenciales-grid">
       <a href="pdf/credenciales/reconocimiento_coro_femenino_2026_04_24.pdf" target="_blank" class="credencial-card">
@@ -923,11 +900,11 @@
       </div>
     </details>
   </div>
-</section>
+</details>
 
-<section id="data-analytics" style="background:#0d0d0d;">
-  <div class="container">
-    <h2 class="section-title"><span>●</span> Data Analytics</h2>
+<details class="section" id="data-analytics">
+  <summary>Data Analytics</summary>
+  <div class="container" style="padding-top:48px;">
     <p style="color:#a1a1aa;max-width:600px;margin:0 auto 48px;text-align:center;">
       Recursos educativos de análisis de datos. Cada tema incluye documento principal y presentación, con video asociado en YouTube.
     </p>
@@ -954,11 +931,11 @@
       </div>
     </div>
   </div>
-</section>
+</details>
 
-<section id="servicios" style="background:#0d0d0d;">
-  <div class="container">
-    <h2 class="section-title"><span>●</span> Servicios</h2>
+<details class="section" id="servicios">
+  <summary>Servicios</summary>
+  <div class="container" style="padding-top:48px;">
     <div class="services-grid">
       <div class="card">
         <h3>Clases de Guitarra</h3>
@@ -982,11 +959,11 @@
       </div>
     </div>
   </div>
-</section>
+</details>
 
-<section id="contacto">
-  <div class="container" style="text-align:center;">
-    <h2 class="section-title"><span>●</span> Contacto</h2>
+<details class="section" id="contacto">
+  <summary>Contacto</summary>
+  <div class="container" style="text-align:center;padding-top:48px;">
     <p style="color:#a1a1aa; max-width:480px; margin: 0 auto 16px;">
       Estoy disponible para clases, composiciones por encargo, arreglos musicales
       y colaboraciones. No dudes en escribirme.
@@ -1002,12 +979,26 @@
       </a>
     </div>
   </div>
-</section>
+</details>
 
 <footer>
   <p>© 2026 Ernesto Alcívar López · Quito, Ecuador</p>
   <p style="margin-top:4px;font-size:.8rem;">Compositor · Guitarrista · Pedagogo · Director y Productor Musical</p>
 </footer>
+
+<script>
+document.querySelectorAll('nav a').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const id = a.getAttribute('href').slice(1);
+    const el = document.getElementById(id);
+    if (el) {
+      el.open = true;
+      setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+    }
+  });
+});
+</script>
 
 </body>
 </html>
